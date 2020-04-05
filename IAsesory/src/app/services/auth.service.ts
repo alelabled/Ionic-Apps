@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/auth";
+import { promise } from "protractor";
+import { resolve } from "url";
 
 @Injectable({
   providedIn: "root",
@@ -8,10 +10,12 @@ export class AuthService {
   constructor(private AFAuth: AngularFireAuth) {}
 
   login(email: string, password: string) {
-    this.AFAuth.signInWithEmailAndPassword(email, password)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => console.log("error :" + err));
+    return new Promise((resolve, rejected) => {
+      this.AFAuth.signInWithEmailAndPassword(email, password)
+        .then((user) => {
+          resolve(user);
+        })
+        .catch((err) => rejected(err));
+    });
   }
 }
