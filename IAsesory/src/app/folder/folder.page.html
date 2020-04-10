@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" id="appFolderIdHeader">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -14,7 +14,15 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
+  <div *ngIf="showArmario" id="containerAppFolder">
+    <app-armario></app-armario>
+  </div>
+
+  <div *ngIf="showTendencias" id="containerAppFolder">
+    <app-tendencias></app-tendencias>
+  </div>
+
+  <div *ngIf="showAsesor" id="containerAppFolder">
+    <app-asesor></app-asesor>
   </div>
 </ion-content>

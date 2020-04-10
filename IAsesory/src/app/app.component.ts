@@ -7,7 +7,7 @@ import { StatusBar } from "@ionic-native/status-bar/ngx";
 @Component({
   selector: "app-root",
   templateUrl: "app.component.html",
-  styleUrls: ["app.component.scss"]
+  styleUrls: ["app.component.scss"],
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
@@ -15,18 +15,18 @@ export class AppComponent implements OnInit {
     {
       title: "Mi Armario",
       url: "/folder/Armario",
-      icon: "body"
-    },
-    {
-      title: "Tu Asesor",
-      url: "/folder/Asesor",
-      icon: "paper-plane"
+      icon: "body",
     },
     {
       title: "Tendencias para mi",
       url: "/folder/Tendencias",
-      icon: "heart"
-    }
+      icon: "heart",
+    },
+    {
+      title: "Tu Asesor",
+      url: "/folder/Asesor",
+      icon: "paper-plane",
+    },
   ];
   public labels = [];
 
@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
     const path = window.location.pathname.split("folder/")[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(
-        page => page.title.toLowerCase() === path.toLowerCase()
+        (page) => page.title.toLowerCase() === path.toLowerCase()
       );
     }
   }
