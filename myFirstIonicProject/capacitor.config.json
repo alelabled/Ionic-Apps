@@ -1,8 +1,0 @@
-{
-  "appId": "com.alest.app",
-  "appName": "IAsesory",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www",
-  "cordova": {}
-}
